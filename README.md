@@ -1,14 +1,12 @@
 # 🩺 Explainable Diabetes ML MCP: AI-Powered Healthcare Risk Assessment
 
 
-
-
 ## 🎯 Project Description
 
 A cutting-edge **Explainable AI (XAI) healthcare platform** that revolutionizes diabetes risk prediction through the seamless integration of **Machine Learning**, **Model Context Protocol (MCP)**, and **interpretable AI technologies**. This system empowers healthcare professionals with transparent, evidence-based diabetes risk assessments backed by advanced ML models and real-time explainability features.
 
 Built on a modern microservices architecture, the platform leverages **LangGraph AI agents**, **FastMCP protocol servers**, and **SHAP explainability frameworks** to deliver clinically-relevant insights through an intuitive web interface. The system transforms complex algorithmic predictions into actionable medical intelligence, ensuring healthcare decisions are both data-driven and interpretable.
-### What Makes Reasonlytics Special
+
 
 ### 🏗️ Technical Architecture
 
@@ -50,7 +48,11 @@ The system follows a **distributed, protocol-driven architecture** powered by **
 - Input sanitization and error handling for clinical data safety
 - Easily extensible to support additional medical models and healthcare protocols
 
+### ⚙️ **Workflow Graph:**  
+ 
+<img width="1884" height="1079" alt="Image" src="https://github.com/user-attachments/assets/900ecf39-1d97-419c-9c4a-61fd7686733d" />
 
+---
 
 ### ✨ Key Features
 
@@ -72,7 +74,7 @@ The system follows a **distributed, protocol-driven architecture** powered by **
 │   └── pima_diabetes.csv           # Training dataset for diabetes prediction
 │
 ├── 📂 models/
-│   └── model.pkl                   # Pre-trained ML model (Random Forest/XGBoost)
+│   └── model.pkl                   # Pre-trained ML model (Random Forest)
 │
 ├── mcp_server.py                   # FastMCP server with diabetes prediction tools
 ├── mcp_functions.py                # Core ML prediction and SHAP explanation functions
@@ -89,14 +91,15 @@ The system follows a **distributed, protocol-driven architecture** powered by **
 
 ## 🧭 Demo Sample Images
 
-**Streamlit Interface**
+### **Streamlit Interface**
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/c36c2265-1288-497c-b36c-f46671d43ea9" />
+<img width="1911" height="1010" alt="Image" src="https://github.com/user-attachments/assets/9675855f-ab0e-48c4-93e5-66f39b836392" />
 
 
-**FastMCP Server**
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/2afae2e9-8179-4765-a6ca-a8b45bd0f894" />
+### **FastMCP Server**
+
+<img width="1915" height="513" alt="Image" src="https://github.com/user-attachments/assets/e6e8b734-25e4-4f20-8fbf-233dffeb97f3" />
 
 
 ---
@@ -135,41 +138,38 @@ ollama pull gpt-oss:latest
 
 ### Starting the Application
 
-1. **Start the FastAPI Server**:
+1. **Start the FastMCP Server**:
 ```bash
-python FastAPI.py
+python mcp_server.py
 ```
-The API will be available at `http://localhost:8000`
+The API will be available at `http://localhost:8080`
 
 2. **Launch the Streamlit Interface**:
 ```bash
-streamlit run streamlit_app.py
+streamlit run streamlit_client_ui.py
 ```
 The web interface will open at `http://localhost:8501`
 
-### ⚙️ **Workflow Graph:**  
- 
-<img width="727" height="1080" alt="Image" src="https://github.com/user-attachments/assets/c56e1075-37e6-4f57-9dfa-488c7a65189d" />
 
----
 
 ### 🧱 Technologies Used
 
+
 | Technology | Description | Link |
 |------------|-------------|------|
-| **LangChain** | Framework for building LLM-driven applications and chains | [LangChain](https://python.langchain.com) |
-| **LangGraph** | State-based agent orchestration for complex LLM workflows | [LangGraph](https://github.com/langchain-ai/langgraph) |
-| **Ollama** | Local LLM inference engine for privacy-focused AI | [Ollama](https://ollama.ai) |
-| **Mistral 7B (Q4_K_M)** | Quantized instruction-tuned model for query classification | [Mistral AI](https://mistral.ai) |
-| **Qwen2.5-Coder 7B (Q4_K_M)** | Specialized code generation model for pandas operations | [Qwen Models](https://github.com/QwenLM/Qwen2.5-Coder) |
-| **Qwen2.5 7B (Q4_K_M)** | General-purpose reasoning model for data insights | [Qwen Models](https://github.com/QwenLM/Qwen2.5) |
-| **Pandas** | Data manipulation and analysis library for Python | [Pandas](https://pandas.pydata.org) |
-| **Matplotlib** | Comprehensive plotting library for data visualization | [Matplotlib](https://matplotlib.org) |
-| **Streamlit** | Web framework for building interactive data applications | [Streamlit](https://streamlit.io) |
-| **PyTorch** | Deep learning framework with CUDA support | [PyTorch](https://pytorch.org) |
-| **NumPy** | Fundamental package for scientific computing | [NumPy](https://numpy.org) |
-| **FastAPI** | High-performance API framework for Python | [FastAPI](https://fastapi.tiangolo.com) |
-| **Pydantic** | Data validation using Python type annotations | [pydantic.dev](https://pydantic.dev/) |
+| **LangChain** | Framework for building LLM-driven applications and agent workflows | [LangChain](https://python.langchain.com) |
+| **LangGraph** | State-based agent orchestration for complex medical AI workflows | [LangGraph](https://github.com/langchain-ai/langgraph) |
+| **FastMCP** | Model Context Protocol server for distributed tool orchestration | [FastMCP](https://pypi.org/project/fastmcp/) |
+| **ChatOllama** | Local LLM integration for privacy-focused healthcare AI | [Ollama](https://ollama.ai) |
+| **gpt-oss:latest** | Open-source medical reasoning model for diabetes risk assessment | [GPT-OSS](https://ollama.com/library/gpt-oss) |
+| **Scikit-learn** | Machine learning library for diabetes prediction models | [Scikit-learn](https://scikit-learn.org) |
+| **SHAP** | Explainable AI library for medical decision transparency | [SHAP](https://shap.readthedocs.io) |
+| **Streamlit** | Web framework for building interactive healthcare applications | [Streamlit](https://streamlit.io) |
+| **Pandas** | Data manipulation and analysis for medical datasets | [Pandas](https://pandas.pydata.org) |
+| **NumPy** | Fundamental package for scientific computing and ML operations | [NumPy](https://numpy.org) |
+| **Joblib** | Model serialization and persistence for ML deployment | [Joblib](https://joblib.readthedocs.io) |
+| **Asyncio** | Asynchronous programming for real-time medical AI responses | [Asyncio](https://docs.python.org/3/library/asyncio.html) |
+| **Pydantic** | Data validation for medical parameter input safety | [Pydantic](https://pydantic.dev) |
 
 ## 🤝 Contributing
 
@@ -183,4 +183,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Star History
 
-If you find Reasonlytics useful, please consider giving it a star ⭐ on GitHub!
+If you find explainable-diabetes-ml-mcp useful, please consider giving it a star ⭐ on GitHub!
