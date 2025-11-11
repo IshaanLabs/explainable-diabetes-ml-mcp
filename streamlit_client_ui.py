@@ -47,7 +47,7 @@ st.markdown("""
 def initialize_system():
     """Initialize the MCP client and LLM system"""
     try:
-        llm = ChatOllama(model="gpt-oss:latest", base_url="http://172.21.0.189:11434")
+        llm = ChatOllama(model="gpt-oss:latest", base_url="http://localhost:11434")
         
         client = MultiServerMCPClient({
             "diabetes_server": {
