@@ -177,7 +177,7 @@ Contributions to this project are welcome! If you have ideas for improvements, b
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](License) file for details.
 
 ---
 
